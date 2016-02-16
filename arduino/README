@@ -1,0 +1,7 @@
+rollespil under rådhuset - arduino code
+
+arduino sketches:
+1: rollespil_relay
+for controlling the relay box activating the phone lines
+2: StandardFirmataINPUT_PULLUP
+modified standard firmata sketch for custom control panel. only modification done is to activate internal pullup resistors on all input pins.
