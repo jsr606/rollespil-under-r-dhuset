@@ -3,6 +3,8 @@
 int ledPin[5] = {2,3,4,5,6};
 int relayPin[5] = {8,9,10,11,12};
 
+boolean onOff[5] = {false, false, false, false, false};
+
 void setup()
 {
   Serial.begin(9600);
@@ -27,15 +29,28 @@ void loop() {
         if (incoming == 0) {
           digitalWrite(ledPin[i], LOW);
           digitalWrite(relayPin[i], LOW);
+          onOff[i] = false;
           Serial.print(char(0));
         } else {
           digitalWrite(ledPin[i], HIGH);
           digitalWrite(relayPin[i], HIGH);
+          onOff[i] = true;
           Serial.print(char(1));
         }
       }
     }
   }
-  delay(50);
+  /*
+  for (int i = 0; i<5; i++) {
+    if (onOff[i] == true) {
+      Serial.print(char(1));
+    } else {
+      Serial.print(char(0));
+    }
+    Serial.println();
+    delay(5);
+  }
+  */
+  delay(25);
 }
 
